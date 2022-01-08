@@ -10,6 +10,8 @@ const port = process.env.PORT || 4000;
 app.listen(port);
 app.use(bodyParser.json())
 
+const token = "   PUT YOUR LINE ACCESS TOKEN HERE    "
+
 /*
 api.search("riko sakurauchi").then(ru => {
     console.log(ru.doujins[0].titles)
@@ -55,7 +57,7 @@ function fetch(code,rpt)
 function reply(reply_token, code, title, coverurl, size) {
     let headers = {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer {kitU7r1CNHa1+t4eUACoTRonmtZdX+c2SSTGW7Hs2Zmu+R8WK88kl8etpaxTGE3inWBxZUxa7gJ/kjjqJTCcOnaebc2AXY1ixendrmH436NjMpSLYSVm4+BVgOsTfIEQdnvyo+OAEcKo2nSq6O+i5gdB04t89/1O/w1cDnyilFU=}'
+        'Authorization': 'Bearer {' + token + '}'
     }
     let body = JSON.stringify({
         replyToken: reply_token,
